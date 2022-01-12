@@ -1,0 +1,10 @@
+
+.upcomingMovies{
+    overflow: hidden;
+    background-color: #ff9999;
+    padding: 8px 8px 8px 8px;
+    height: 20px;
+    font-size: 1rem;
+    alignment: center;
+    text-align: center;
+}

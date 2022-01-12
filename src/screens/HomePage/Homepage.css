@@ -1,0 +1,13 @@
+.Parent {
+    display: flex;
+    flex-direction: row;
+}
+
+.child1 {
+    width: 76%;
+    text-align: right;
+}
+
+.child2 {
+    width: 24%;
+}
