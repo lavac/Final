@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import logo from "../../assets/logo.svg";
 
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
@@ -39,7 +38,7 @@ function ImageGridList(props) {
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={180} className={classes.gridList}>
+      <GridList cellHeight={180} className={classes.gridList} cols={4}>
         {movies.map(movie => (
           <GridListTile key={movie.id}>
              <a href={movie.wiki_url}>
@@ -47,7 +46,7 @@ function ImageGridList(props) {
             </a>
             <GridListTileBar
               title={movie.title}
-              subtitle={<span>Release Date: {movie.release_date}</span>}
+              subtitle={<span>Release Date: {movie.release_date}</span>} titleWrap={true}
               actionIcon={
                 <IconButton className={classes.icon}>
                   <InfoIcon />

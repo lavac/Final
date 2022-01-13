@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
@@ -6,8 +6,6 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
-import tileData from './tileDataNow';
-import logo from "../../assets/logo.svg";
 
 const styles = theme => ({
   root: {
@@ -33,16 +31,28 @@ const styles = theme => ({
 
 function SingleLineGridList(props) {
   const { classes } = props;
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+  
+    fetch("http://localhost:8085/api/v1/movies")
+    .then((response) => response.json())
+        .then(response => {
+          setMovies(response.movies);
+        })
+  }, []);
+
 
   return (
-
     <div className={classes.root}>
       <GridList className={classes.gridList} cols={4}>
-        {tileData.map(tile => (
-          <GridListTile key={tile.img}>
-            <img src={logo} alt={logo} />
+        {movies.map(movie => (
+          <GridListTile key={movie.id}>
+            <a href={movie.wiki_url}>
+            <img src={movie.poster_url} alt={movie.title} />
+            </a>
             <GridListTileBar
-              title={tile.title}
+              title={movie.title}
               classes={{
                 root: classes.titleBar,
                 title: classes.title,
