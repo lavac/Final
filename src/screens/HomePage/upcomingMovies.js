@@ -4,8 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
-import IconButton from '@material-ui/core/IconButton';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
 
 const styles = theme => ({
   root: {
@@ -45,23 +43,14 @@ function SingleLineGridList(props) {
 
   return (
     <div className={classes.root}>
-      <GridList className={classes.gridList} cols={4}>
+      <GridList className={classes.gridList} cols={6}>
         {movies.map(movie => (
           <GridListTile key={movie.id}>
             <a href={movie.wiki_url}>
-            <img src={movie.poster_url} alt={movie.title} />
+            <img width="250px" src={movie.poster_url} alt={movie.title} />
             </a>
             <GridListTileBar
               title={movie.title}
-              classes={{
-                root: classes.titleBar,
-                title: classes.title,
-              }}
-              actionIcon={
-                <IconButton>
-                  <StarBorderIcon className={classes.title} />
-                </IconButton>
-              }
             />
           </GridListTile>
         ))}

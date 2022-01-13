@@ -17,7 +17,7 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-    width: 1500,
+    width: 800,
     height: 450,
   },
 });
@@ -38,15 +38,16 @@ function ImageGridList(props) {
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={180} className={classes.gridList} cols={4}>
+      <GridList cellHeight={350} className={classes.gridList} cols={3}>
         {movies.map(movie => (
           <GridListTile key={movie.id}>
              <a href={movie.wiki_url}>
-            <img src={movie.poster_url} alt={movie.title} />
+            <img width="250px" height="400px" src={movie.poster_url} alt={movie.title} />
             </a>
             <GridListTileBar
+              align="left"
               title={movie.title}
-              subtitle={<span>Release Date: {movie.release_date}</span>} titleWrap={true}
+              subtitle={<span>Release Date: {movie.release_date}</span>}
               actionIcon={
                 <IconButton className={classes.icon}>
                   <InfoIcon />

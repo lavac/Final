@@ -6,6 +6,8 @@
 .child1 {
     width: 76%;
     text-align: right;
+    display: flex;
+    align-items: stretch;
 }
 
 .child2 {
