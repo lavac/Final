@@ -18,7 +18,7 @@ class HomePage extends React.Component {
 
         <Header></Header>
         <UpcomingList></UpcomingList>
-
+        <br /> 
         <div className="Parent">
           <div className="child1">
             <MovieList></MovieList>

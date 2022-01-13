@@ -48,8 +48,7 @@ export default function BasicModal(props) {
       }}
       spacing={2}
       noValidate
-      autoComplete="off"
-    >
+      autoComplete="off">
           <TextField id="filled-basic" label="Username*" variant="filled" />
           <TextField id="filled-basic" label="Password*" variant="filled" />
           <Button variant="contained" onClick={props.ifLoginClicked} >LOGIN</Button>
