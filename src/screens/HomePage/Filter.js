@@ -45,8 +45,8 @@ const button = {
            <MenuItem value={40}>Anne Hathaway</MenuItem>
        </Select>
 
-       <TextField type="date" label="Release Date Start" variant="filled" />
-       <TextField type="date" label="Release Date End" variant="filled" />
+       <TextField hiddenLabel type="date" label="Release Date Start" variant="filled" />
+       <TextField hiddenLabel type="date" label="Release Date End" variant="filled" />
        </Stack>
       </CardContent>
       <CardActions>
